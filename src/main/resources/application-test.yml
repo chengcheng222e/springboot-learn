@@ -7,8 +7,9 @@ spring:
     url: jdbc:mysql://localhost:3306/test
     username: root
     password: root
-
-
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/springboot-db
 mybatis:
   mapper-locations: classpath*:mybatis/*Mapper.xml
   type-aliases-package: com.cyblogs.springboot.dao

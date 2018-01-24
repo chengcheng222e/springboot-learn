@@ -31,4 +31,10 @@ public class AccountServiceImpl implements IAccountService {
         return accountMapper.add(account.getName(), account.getMoney());
     }
 
+    @Override
+    public int delete(Long id) {
+        return accountMapper.deleteByPrimaryKey(id);
+    }
+
+
 }

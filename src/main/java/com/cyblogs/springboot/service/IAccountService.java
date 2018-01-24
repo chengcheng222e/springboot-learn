@@ -11,4 +11,6 @@ public interface IAccountService {
     int add(Account account);
 
     int addMabtis(Account account);
+
+    int delete(Long id);
 }

@@ -14,4 +14,6 @@ public interface AccountMapper {
 
     @Insert("insert into account(name, money) values(#{name}, #{money})")
     int add(@Param("name") String name, @Param("money") double money);
+
+    int deleteByPrimaryKey(Long id);
 }

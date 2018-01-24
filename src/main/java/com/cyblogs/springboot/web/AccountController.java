@@ -45,4 +45,10 @@ public class AccountController {
             return "fail";
         }
     }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String delete(@RequestParam(value = "id") String id) {
+        int t = accountService.delete(Long.parseLong(id));
+        return t == 1 ? Boolean.TRUE + "" : Boolean.FALSE + "";
+    }
 }

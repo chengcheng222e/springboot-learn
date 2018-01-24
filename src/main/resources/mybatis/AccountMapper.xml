@@ -17,5 +17,8 @@
         where id = #{id,jdbcType=BIGINT}
     </delete>
 
+    <update id="update">
+        UPDATE account set money=#{money} WHERE id=#{id}
+    </update>
 
 </mapper>

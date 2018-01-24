@@ -13,4 +13,6 @@ public interface IAccountService {
     int addMabtis(Account account);
 
     int delete(Long id);
+
+    int update(Long id1, Long id2);
 }

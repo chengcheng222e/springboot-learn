@@ -1,8 +1,8 @@
 package com.cyblogs.springboot.dao;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
+        import org.apache.ibatis.annotations.Insert;
+        import org.apache.ibatis.annotations.Mapper;
+        import org.apache.ibatis.annotations.Param;
 
 /**
  * Created with IntelliJ IDEA
@@ -16,4 +16,6 @@ public interface AccountMapper {
     int add(@Param("name") String name, @Param("money") double money);
 
     int deleteByPrimaryKey(Long id);
+
+    int update(@Param("id") Long id, @Param("money") Double money);
 }

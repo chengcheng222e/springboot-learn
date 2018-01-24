@@ -51,4 +51,10 @@ public class AccountController {
         int t = accountService.delete(Long.parseLong(id));
         return t == 1 ? Boolean.TRUE + "" : Boolean.FALSE + "";
     }
+
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    public String update(@RequestParam(value = "first") Long first, @RequestParam(value = "second") Long second) {
+        int t = accountService.update(first, second);
+        return t == 1 ? Boolean.TRUE + "" : Boolean.FALSE + "";
+    }
 }

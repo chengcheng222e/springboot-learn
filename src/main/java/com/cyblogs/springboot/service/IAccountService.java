@@ -9,4 +9,6 @@ import com.cyblogs.springboot.domain.Account;
  */
 public interface IAccountService {
     int add(Account account);
+
+    int addMabtis(Account account);
 }

@@ -31,6 +31,18 @@ public class AccountController {
         } else {
             return "fail";
         }
+    }
 
+    @RequestMapping(value = "/add/mybatis", method = RequestMethod.GET)
+    public String addMybatis(@RequestParam(value = "name") String name, @RequestParam(value = "money") double money) {
+        Account account = new Account();
+        account.setMoney(money);
+        account.setName(name);
+        int t = accountService.addMabtis(account);
+        if (t == 1) {
+            return account.toString();
+        } else {
+            return "fail";
+        }
     }
 }

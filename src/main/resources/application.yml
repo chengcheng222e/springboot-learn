@@ -1,7 +1,0 @@
-my:
-  name: chenyuan
-  age: 28
-
-spring:
-  profiles:
-    active: test

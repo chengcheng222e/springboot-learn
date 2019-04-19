@@ -14,6 +14,7 @@
         <module>springboot-learn-mongodb</module>
         <module>springboot-learn-mybatis</module>
         <module>springboot-learn-configuration</module>
+        <module>springboot-learn-docker</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -32,6 +33,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.7</java.version>
+        <docker.image.prefix>springio</docker.image.prefix>
     </properties>
 
     <dependencyManagement>

@@ -1,5 +1,6 @@
 package com.cyblogs.springboot.dao;
 
+import com.cyblogs.springboot.domain.Account;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -18,4 +19,6 @@ public interface AccountMapper {
     int deleteByPrimaryKey(Long id);
 
     int update(@Param("id") Long id, @Param("money") Double money);
+
+    Account selectById(Long id);
 }

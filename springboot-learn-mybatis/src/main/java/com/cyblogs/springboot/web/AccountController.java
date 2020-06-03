@@ -46,4 +46,10 @@ public class AccountController {
         return t == 1 ? Boolean.TRUE + "" : Boolean.FALSE + "";
     }
 
+    @RequestMapping(value = "/query", method = RequestMethod.GET)
+    public String query(Long id) {
+        Account account = accountService.selectById(id);
+        return JSON.toJSONString(account);
+    }
+
 }

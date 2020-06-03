@@ -15,4 +15,6 @@ public interface IAccountService {
 
     int update(Long id1, Long id2);
 
+    Account selectById(Long id);
+
 }

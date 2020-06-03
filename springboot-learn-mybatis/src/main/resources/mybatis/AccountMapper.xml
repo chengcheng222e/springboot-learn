@@ -21,4 +21,10 @@
         UPDATE account set money=#{money} WHERE id=#{id}
     </update>
 
+    <select id="selectById" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from account
+        where id = #{id}
+    </select>
+
 </mapper>

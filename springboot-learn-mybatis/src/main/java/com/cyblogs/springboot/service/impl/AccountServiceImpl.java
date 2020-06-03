@@ -6,6 +6,8 @@ import com.cyblogs.springboot.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
  * Created with IntelliJ IDEA
  * <p>
@@ -14,7 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountServiceImpl implements IAccountService {
 
-    @Autowired
+    @Resource
     private AccountMapper accountMapper;
 
     @Override
@@ -36,4 +38,8 @@ public class AccountServiceImpl implements IAccountService {
         return 1;
     }
 
+    @Override
+    public Account selectById(Long id) {
+        return accountMapper.selectById(id);
+    }
 }

@@ -10,7 +10,6 @@ import org.apache.ibatis.annotations.Param;
  * <p>
  * User: chenyuan
  */
-@Mapper
 public interface AccountMapper {
 
     @Insert("insert into account(name, money) values(#{name}, #{money})")

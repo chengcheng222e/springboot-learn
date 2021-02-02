@@ -1,2 +1,30 @@
 server:
     port: 8085
+eureka:
+    client:
+        healthcheck:
+            enabled: true
+        serviceUrl:
+            defaultZone: http://127.0.0.1:7000/eureka/
+    instance:
+        lease-expiration-duration-in-seconds: 30
+        lease-renewal-interval-in-seconds: 10
+        prefer-ip-address: true
+hystrix:
+    threadpool:
+        default:
+            allowMaximumSizeToDivergeFromCoreSize: true
+            coreSize: 10
+            maxQueueSize: 100
+            maximumSize: 20
+            queueSizeRejectionThreshold: 101
+ribbon:
+    ConnectTimeout: 1500
+    MaxAutoRetries: 0
+    ReadTimeout: 4500
+spring:
+    application:
+        name: springboot-learn-web-demo
+    jackson:
+        dateFormat: yyyy-MM-dd hh:mm:ss
+        time-zone: GMT+8

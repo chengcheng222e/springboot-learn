@@ -8,27 +8,15 @@
     <artifactId>springboot-learn</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <modules>
-        <module>springboot-learn-redis</module>
-        <module>springboot-learn-mysql</module>
-        <module>springboot-learn-mongodb</module>
-        <module>springboot-learn-mybatis</module>
-        <module>springboot-learn-configuration</module>
-        <module>springboot-learn-docker</module>
-        <module>springboot-starters</module>
-        <module>springboot-learn-web-demo</module>
-    </modules>
-
     <packaging>pom</packaging>
     <name>springboot-learn</name>
     <description>Demo project for Spring Boot</description>
 
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.2.RELEASE</version>
-        <relativePath/>
+        <version>2.1.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
@@ -36,10 +24,20 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.7</java.version>
         <docker.image.prefix>springio</docker.image.prefix>
+        <spring-cloud-dependencies.version>Greenwich.SR2</spring-cloud-dependencies.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -67,5 +65,63 @@
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <!-- spring boot start -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- spring boot end -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>1.4.7.RELEASE</version>
+        </dependency>
+        <!-- utils start -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- utils end -->
+
+        <!-- test start -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <optional>true</optional>
+        </dependency>
+        <!-- test end -->
+    </dependencies>
+
+    <modules>
+        <module>springboot-learn-redis</module>
+        <module>springboot-learn-mysql</module>
+        <module>springboot-learn-mongodb</module>
+        <module>springboot-learn-mybatis</module>
+        <module>springboot-learn-configuration</module>
+        <module>springboot-learn-docker</module>
+        <module>springboot-starters</module>
+        <module>springboot-learn-web-demo</module>
+    </modules>
 
 </project>

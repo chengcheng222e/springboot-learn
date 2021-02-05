@@ -39,9 +39,7 @@ public class HelloController extends AbstractCommonController {
         log.info("demoReq={}", JSON.toJSONString(demoReq));
 
         log.info("======version={}=====", demoReq.getVersion());
-
-        String version = DemoService.class.getName() + "_" + demoReq.getVersion();
-        DemoService demoService = (DemoService) getService(version);
+        DemoService demoService = (DemoService) getService(getVersion(DemoService.class, demoReq.getVersion()));
 
         return demoService.sayHello(demoReq.getWord());
     }

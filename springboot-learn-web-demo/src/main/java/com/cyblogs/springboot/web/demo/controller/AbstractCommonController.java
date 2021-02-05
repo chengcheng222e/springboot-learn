@@ -2,6 +2,7 @@ package com.cyblogs.springboot.web.demo.controller;
 
 import com.cyblogs.springboot.web.demo.common.VersionStrateFactory;
 import com.cyblogs.springboot.web.demo.service.VersionService;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -24,5 +25,10 @@ public abstract class AbstractCommonController {
         Optional<VersionService> versionServiceOptional = versionStrateFactory.getFactory(version);
         VersionService messageSendService = versionServiceOptional.orElseThrow(() -> new IllegalArgumentException("找不到对应版本的服务=" + version));
         return messageSendService;
+    }
+
+
+    protected String getVersion(Class clazz, String version) {
+        return clazz.getName() + "_" + version;
     }
 }
